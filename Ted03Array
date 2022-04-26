@@ -1,0 +1,46 @@
+package Ted04Array;
+
+import java.util.Scanner;
+
+public class Ted04Array {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int menorNum = 0;
+        int maiorNum = 0;
+        int soma = 0;
+        int somaPares = 0;
+
+        int[] numeros = new int[10];
+
+        for (int i=0; i< numeros.length; i++) {
+            System.out.println("Entre com o número " + (i+1) + ": ");
+            numeros[i] = sc.nextInt();
+
+            if (i == 0) {
+                maiorNum = numeros[i];
+                menorNum = numeros[i];
+            }
+
+            if (numeros[i] < menorNum) {
+                menorNum = numeros[i];
+            }
+            else if (numeros[i] > maiorNum) {
+                maiorNum = numeros[i];
+            }
+            soma = soma + numeros[i];
+
+            if (numeros[i] %2 == 0) {
+                somaPares = somaPares + numeros[i];
+            }
+        }
+
+        System.out.println("O menor valor é: " + menorNum);
+        System.out.println("O maior valor é: " + maiorNum);
+        System.out.println("A soma é: " + soma);
+        System.out.println("A soma dos pares é: " + somaPares);
+
+        sc.close();
+    }
+}
